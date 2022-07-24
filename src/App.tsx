@@ -83,7 +83,7 @@ const App: React.FC = () => {
   const [typing, setTyping] = useState<MessageType>()
   const [windowWidth, setWindowWidth] = useState<number>(window.screen.width)
 
-  const client = new Colyseus.Client('ws://localhost:2567')
+  const client = new Colyseus.Client(process.env.REACT_APP_BACKEND_COLYSEUS)
 
   const onSubmit = () => {
     if (username.length === 0) {
